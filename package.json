@@ -2,7 +2,6 @@
   "name": "mars-rover-kata",
   "version": "1.0.0",
   "description": "Move a rover on a grid",
-  "main": "index.js",
   "scripts": {
     "test": "gulp test"
   },

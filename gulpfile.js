@@ -30,11 +30,6 @@ gulp.task('test', ['build'], function() {
     gulp.src('dist/**/*.spec.js').pipe(jasmine());
 });
 
-// gulp.task('run', ['build'], function(){
-//     nodemon({
-//         script: 'dist/server.js'
-//     })
-// });
 
 gulp.task('watch', ['build', 'test'], function() {
     gulp.watch("src/**/*.ts", ['build','test']);

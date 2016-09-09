@@ -11,6 +11,6 @@ and [jasmine](http://jasmine.github.io/) as test framework.
 * ```git clone ...``` : clone the repository
 * ``` npm install ``` : Install npm dependencies
 * ``` typings install ``` : Install types definitions
-* ``` gulp build ```: Build the sources files and the specs  (Transpile into javascript)
+* ``` gulp build ```: Build the sources files and the specs  (Transpile into javascript in the dist folder)
 * ``` gulp test ```: Run tests with jasmine.
 * ``` gulp watch ```: Run build and test continously reruning on files changes.
