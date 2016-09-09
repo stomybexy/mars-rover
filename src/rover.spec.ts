@@ -259,7 +259,7 @@ describe('Rover => ', function () {
 
                 let report = {
                     success: false,
-                    message: 'Obstacle found',
+                    message: 'Obstacle found at [1, 4]',
                     currentPosition: expectedPosition,
                     currentDirection: expectedDirection
                 }

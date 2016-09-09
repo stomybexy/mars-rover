@@ -22,7 +22,7 @@ export class Rover {
         this.grid = grid;
     }
 
-    /**
+    /**console.log('lookupx > maxGrid', lookupX, this.grid.getMaxX());
      * Return the current position [x, y] of the rover
      */
     getPosition() {
@@ -30,6 +30,7 @@ export class Rover {
     }
 
     setX(x:number) {
+        
         if(x >= 0) {
             this.x = x;
         }
@@ -172,7 +173,7 @@ export class Rover {
      */
     _adjustAndValidateMove(lookupX: number, lookupY: number) {
         if (lookupX > this.grid.getMaxX()) {
-
+            
             lookupX = 0;
 
         } else if (lookupX < 0) {
@@ -193,7 +194,7 @@ export class Rover {
 
             return {
                 success: false,
-                message: 'Obstacle found',
+                message: `Obstacle found at [${lookupX}, ${lookupY}]`,
                 currentPosition: [this.x, this.y],
                 currentDirection: this.direction
             }

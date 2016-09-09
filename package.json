@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Move a rover on a grid",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "sample": "node dist/sample"
   },
   "keywords": [
     "TDD",
@@ -26,5 +27,6 @@
   "author": "Jonatan Sombié <jonatan.sombie@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "prompt": "^1.0.0"
   }
 }
