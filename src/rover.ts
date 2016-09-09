@@ -62,7 +62,7 @@ export class Rover {
     setGrid(grid: Grid) {
         this.grid = grid;
     }
-    
+
     getGrid(){
         return this.grid;
     }
@@ -117,7 +117,7 @@ export class Rover {
     }
 
     /**
-     * Move the rover toward right according to the current direction
+     * Set the direction to the right according to the current direction
      */
     turnLeft() {
         switch (this.direction) {
@@ -143,7 +143,7 @@ export class Rover {
     }
 
     /**
-     * Move the rover toward left according to the current direction
+     * Set direction to the left according to the current direction
      */
     turnRight() {
         switch (this.direction) {
