@@ -1,5 +1,4 @@
 
-import * as _ from 'underscore';
 
 import { Grid } from './grid';
 
@@ -54,7 +53,7 @@ export class Rover {
      * i.e N or S or E or W - it's case insensitive
      */
     setDirection(direction:string = '') {
-        if (_.contains(['N', 'S', 'E', 'W'], direction.toUpperCase())) {
+        if (['N', 'S', 'E', 'W'].indexOf(direction.toUpperCase()) > -1) {
             this.direction = direction.toUpperCase();
         }
     }

@@ -26,6 +26,5 @@
   "author": "Jonatan Sombié <jonatan.sombie@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "underscore": "^1.8.3"
   }
 }

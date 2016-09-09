@@ -1,4 +1,3 @@
-import * as _ from 'underscore';
 
 import { Rover } from './rover';
 import { Grid } from './grid';
