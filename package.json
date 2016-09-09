@@ -4,7 +4,8 @@
   "description": "Move a rover on a grid",
   "scripts": {
     "test": "gulp test",
-    "sample": "node dist/sample"
+    "sample": "node dist/sample",
+    "postinstall": "typings install"
   },
   "keywords": [
     "TDD",
