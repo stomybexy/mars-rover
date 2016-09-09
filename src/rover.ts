@@ -1,14 +1,14 @@
 
 
-import { Grid } from './grid';
+import { Grid } from "./grid";
 
 export class Rover {
-    private x: number; // Rover' x coordinate
-    private y: number; // Rover' y coordinate
+    private x: number; // Rover" x coordinate
+    private y: number; // Rover" y coordinate
     private direction: string; // Rover direction: N S E W
     private grid: Grid;
 
-    constructor(x:number=0, y:number=0, direction:string='N', grid: Grid = new Grid()) {
+    constructor(x: number = 0, y: number = 0, direction: string = "N", grid: Grid = new Grid()) {
 
         this.setX(x);
         this.setY(y);
@@ -17,7 +17,7 @@ export class Rover {
         this.y = this.y || 0;
 
         this.setDirection(direction);
-        this.direction = this.direction || 'N';
+        this.direction = this.direction || "N";
 
         this.grid = grid;
     }
@@ -29,15 +29,15 @@ export class Rover {
         return [this.x, this.y];
     }
 
-    setX(x:number) {
-        
-        if(x >= 0) {
+    setX(x: number) {
+
+        if (x >= 0) {
             this.x = x;
         }
     }
 
-    setY(y:number){
-        if(y >= 0){
+    setY(y: number) {
+        if (y >= 0) {
             this.y = y;
         }
     }
@@ -51,10 +51,10 @@ export class Rover {
 
     /**
      * set the direction of the rover to the given value if it is valid 
-     * i.e N or S or E or W - it's case insensitive
+     * i.e N or S or E or W - it"s case insensitive
      */
-    setDirection(direction:string = '') {
-        if (['N', 'S', 'E', 'W'].indexOf(direction.toUpperCase()) > -1) {
+    setDirection(direction: string = "") {
+        if (["N", "S", "E", "W"].indexOf(direction.toUpperCase()) > -1) {
             this.direction = direction.toUpperCase();
         }
     }
@@ -63,7 +63,7 @@ export class Rover {
         this.grid = grid;
     }
 
-    getGrid(){
+    getGrid() {
         return this.grid;
     }
 
@@ -75,16 +75,16 @@ export class Rover {
         let lookupY = this.y;
 
         switch (this.direction) {
-            case 'N':
+            case "N":
                 lookupY++;
                 break;
-            case 'S':
+            case "S":
                 lookupY--;
                 break;
-            case 'E':
+            case "E":
                 lookupX++;
                 break;
-            case 'W':
+            case "W":
                 lookupX--;
                 break;
         }
@@ -100,16 +100,16 @@ export class Rover {
         let lookupY = this.y;
 
         switch (this.direction) {
-            case 'N':
+            case "N":
                 lookupY--;
                 break;
-            case 'S':
+            case "S":
                 lookupY++;
                 break;
-            case 'E':
+            case "E":
                 lookupX--;
                 break;
-            case 'W':
+            case "W":
                 lookupX++;
                 break;
         }
@@ -121,25 +121,25 @@ export class Rover {
      */
     turnLeft() {
         switch (this.direction) {
-            case 'N':
-                this.direction = 'W';
+            case "N":
+                this.direction = "W";
                 break;
-            case 'S':
-                this.direction = 'E';
+            case "S":
+                this.direction = "E";
                 break;
-            case 'E':
-                this.direction = 'N';
+            case "E":
+                this.direction = "N";
                 break;
-            case 'W':
-                this.direction = 'S';
+            case "W":
+                this.direction = "S";
                 break;
         }
         return {
             success: true,
-            message: '',
+            message: "",
             currentPosition: [this.x, this.y],
             currentDirection: this.direction
-        }
+        };
     }
 
     /**
@@ -147,25 +147,25 @@ export class Rover {
      */
     turnRight() {
         switch (this.direction) {
-            case 'N':
-                this.direction = 'E';
+            case "N":
+                this.direction = "E";
                 break;
-            case 'S':
-                this.direction = 'W';
+            case "S":
+                this.direction = "W";
                 break;
-            case 'E':
-                this.direction = 'S';
+            case "E":
+                this.direction = "S";
                 break;
-            case 'W':
-                this.direction = 'N';
+            case "W":
+                this.direction = "N";
                 break;
         }
         return {
             success: true,
-            message: '',
+            message: "",
             currentPosition: [this.x, this.y],
             currentDirection: this.direction
-        }
+        };
     }
 
     /**
@@ -173,7 +173,7 @@ export class Rover {
      */
     _adjustAndValidateMove(lookupX: number, lookupY: number) {
         if (lookupX > this.grid.getMaxX()) {
-            
+
             lookupX = 0;
 
         } else if (lookupX < 0) {
@@ -187,7 +187,7 @@ export class Rover {
 
         } else if (lookupY < 0) {
 
-            lookupY = this.grid.getMaxY()
+            lookupY = this.grid.getMaxY();
         }
 
         if (this.grid.isObstacle([lookupX, lookupY])) {
@@ -197,16 +197,16 @@ export class Rover {
                 message: `Obstacle found at [${lookupX}, ${lookupY}]`,
                 currentPosition: [this.x, this.y],
                 currentDirection: this.direction
-            }
+            };
         } else {
             this.x = lookupX;
             this.y = lookupY;
             return {
                 success: true,
-                message: '',
+                message: "",
                 currentPosition: [this.x, this.y],
                 currentDirection: this.direction
-            }
+            };
         }
 
     }
@@ -226,16 +226,16 @@ export class Rover {
             let command = commands[i];
 
             switch (command.toUpperCase()) {
-                case 'F':
+                case "F":
                     finalResult = this.moveForward();
                     break;
-                case 'B':
+                case "B":
                     finalResult = this.moveBackward();
                     break;
-                case 'L':
+                case "L":
                     finalResult = this.turnLeft();
                     break;
-                case 'R':
+                case "R":
                     finalResult = this.turnRight();
                     break;
                 default:
@@ -244,7 +244,7 @@ export class Rover {
                         message: `Invalid command ${command}`,
                         currentPosition: [this.x, this.y],
                         currentDirection: this.direction
-                    }
+                    };
             }
             if (!finalResult.success) {
                 break;

@@ -4,14 +4,14 @@ export class Grid {
     private maxX: number;
     private maxY: number;
 
-    constructor( maxX:number=100, maxY:number=100, obstacles={}) {
+    constructor(maxX: number = 100, maxY: number = 100, obstacles = {}) {
         this.maxX = maxX;
         this.maxY = maxY;
         this.obstacles = obstacles;
 
     }
 
-    isObstacle(coordinates: [number]) : boolean{
+    isObstacle(coordinates: [number]): boolean {
         return this.obstacles[coordinates[0]] === coordinates[1];
     }
 
@@ -24,7 +24,7 @@ export class Grid {
     }
 
     addObstacle(x, y) {
-        if(x <= this.maxX && x >= 0 && y >= 0 && y <= this.maxY){
+        if (x <= this.maxX && x >= 0 && y >= 0 && y <= this.maxY) {
             this.obstacles[x] = y;
             return true;
         }

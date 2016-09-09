@@ -1,63 +1,63 @@
 
-import { Rover } from './rover';
-import { Grid } from './grid';
+import { Rover } from "./rover";
+import { Grid } from "./grid";
 
-describe('Rover => ', function () {
+describe("Rover => ", function () {
 
 
 
-    describe('Constructor', function () {
+    describe("Constructor", function () {
 
         let rover: Rover;
 
         beforeAll(function () {
-            rover = rover = new Rover(10, 20, 'N');
+            rover = rover = new Rover(10, 20, "N");
         });
-        it('Should create a rover with the given initial position', function () {
+        it("Should create a rover with the given initial position", function () {
 
             expect(rover.getPosition()).toEqual([10, 20]);
         });
 
-        it('Should create a rover with the given inital direction', function () {
-            expect(rover.getDirection()).toBe('N');
+        it("Should create a rover with the given inital direction", function () {
+            expect(rover.getDirection()).toBe("N");
         });
     });
-    describe('move', function () {
+    describe("move", function () {
         let rover: Rover;
 
         beforeEach(function () {
-            let obstacles = { };
+            let obstacles = {};
 
-            rover = new Rover(5, 8, 'N', new Grid(100, 100, obstacles));
+            rover = new Rover(5, 8, "N", new Grid(100, 100, obstacles));
         });
 
-        describe('moveForward', function () {
+        describe("moveForward", function () {
 
 
-            it('should move towards North when facing North', function () {
-                rover.setDirection('N');
+            it("should move towards North when facing North", function () {
+                rover.setDirection("N");
 
                 let expected = [5, 9];
                 rover.moveForward();
 
                 expect(rover.getPosition()).toEqual(expected);
             });
-            it('should move towards South when facing South', function () {
-                rover.setDirection('S');
+            it("should move towards South when facing South", function () {
+                rover.setDirection("S");
 
                 let expected = [5, 7];
                 rover.moveForward();
                 expect(rover.getPosition()).toEqual(expected);
             });
-            it('should move towards East when facing East', function () {
-                rover.setDirection('E');
+            it("should move towards East when facing East", function () {
+                rover.setDirection("E");
 
                 let expected = [6, 8];
                 rover.moveForward();
                 expect(rover.getPosition()).toEqual(expected);
             });
-            it('should move towards West when facing West', function () {
-                rover.setDirection('W');
+            it("should move towards West when facing West", function () {
+                rover.setDirection("W");
 
                 let expected = [4, 8];
                 rover.moveForward();
@@ -65,31 +65,31 @@ describe('Rover => ', function () {
             });
         });
 
-        describe('moveBackward', function () {
+        describe("moveBackward", function () {
 
-            it('should move towards South when facing North', function () {
-                rover.setDirection('N');
+            it("should move towards South when facing North", function () {
+                rover.setDirection("N");
 
                 let expected = [5, 7];
                 rover.moveBackward();
                 expect(rover.getPosition()).toEqual(expected);
             });
-            it('should move towards North when facing South', function () {
-                rover.setDirection('S');
+            it("should move towards North when facing South", function () {
+                rover.setDirection("S");
 
                 let expected = [5, 9];
                 rover.moveBackward();
                 expect(rover.getPosition()).toEqual(expected);
             });
-            it('should move towards West when facing East', function () {
-                rover.setDirection('E');
+            it("should move towards West when facing East", function () {
+                rover.setDirection("E");
 
                 let expected = [4, 8];
                 rover.moveBackward();
                 expect(rover.getPosition()).toEqual(expected);
             });
-            it('should move towards East when facing West', function () {
-                rover.setDirection('W');
+            it("should move towards East when facing West", function () {
+                rover.setDirection("W");
 
                 let expected = [6, 8];
                 rover.moveBackward();
@@ -97,41 +97,41 @@ describe('Rover => ', function () {
             });
         });
 
-        describe('turnRight', function () {
-            it('Should set the direction to East when facing North', function () {
-                rover.setDirection('N');
+        describe("turnRight", function () {
+            it("Should set the direction to East when facing North", function () {
+                rover.setDirection("N");
 
-                let expected = 'E';
+                let expected = "E";
                 rover.turnRight();
 
                 expect(rover.getDirection()).toBe(expected);
 
             });
 
-            it('Should set the direction to West when facing South', function () {
-                rover.setDirection('S');
+            it("Should set the direction to West when facing South", function () {
+                rover.setDirection("S");
 
-                let expected = 'W';
+                let expected = "W";
                 rover.turnRight();
 
                 expect(rover.getDirection()).toBe(expected);
 
             });
 
-            it('Should set the direction to South when facing East', function () {
-                rover.setDirection('E');
+            it("Should set the direction to South when facing East", function () {
+                rover.setDirection("E");
 
-                let expected = 'S';
+                let expected = "S";
                 rover.turnRight();
 
                 expect(rover.getDirection()).toBe(expected);
 
             });
 
-            it('Should set the direction to North when facing West', function () {
-                rover.setDirection('W');
+            it("Should set the direction to North when facing West", function () {
+                rover.setDirection("W");
 
-                let expected = 'N';
+                let expected = "N";
                 rover.turnRight();
 
                 expect(rover.getDirection()).toBe(expected);
@@ -139,41 +139,41 @@ describe('Rover => ', function () {
             });
         });
 
-        describe('turnLeft', function () {
-            it('Should set the direction to West when facing North', function () {
-                rover.setDirection('N');
+        describe("turnLeft", function () {
+            it("Should set the direction to West when facing North", function () {
+                rover.setDirection("N");
 
-                let expected = 'W';
+                let expected = "W";
                 rover.turnLeft();
 
                 expect(rover.getDirection()).toBe(expected);
 
             });
 
-            it('Should set the direction to East when facing South', function () {
-                rover.setDirection('S');
+            it("Should set the direction to East when facing South", function () {
+                rover.setDirection("S");
 
-                let expected = 'E';
+                let expected = "E";
                 rover.turnLeft();
 
                 expect(rover.getDirection()).toBe(expected);
 
             });
 
-            it('Should set the direction to North when facing East', function () {
-                rover.setDirection('E');
+            it("Should set the direction to North when facing East", function () {
+                rover.setDirection("E");
 
-                let expected = 'N';
+                let expected = "N";
                 rover.turnLeft();
 
                 expect(rover.getDirection()).toBe(expected);
 
             });
 
-            it('Should set the direction to South when facing West', function () {
-                rover.setDirection('W');
+            it("Should set the direction to South when facing West", function () {
+                rover.setDirection("W");
 
-                let expected = 'S';
+                let expected = "S";
                 rover.turnLeft();
 
                 expect(rover.getDirection()).toBe(expected);
@@ -181,8 +181,8 @@ describe('Rover => ', function () {
             });
         });
 
-        describe('adjustAndValidateMove', function () {
-            it('should wrap from  edge Est of the grid to the West one', function () {
+        describe("adjustAndValidateMove", function () {
+            it("should wrap from  edge Est of the grid to the West one", function () {
                 let lookupX = 101;
                 let lookupY = 16;
 
@@ -193,7 +193,7 @@ describe('Rover => ', function () {
                 expect(rover.getPosition()).toEqual(expectedPosition);
             });
 
-            it('should wrap from  edge West of the grid to the Est one', function () {
+            it("should wrap from  edge West of the grid to the Est one", function () {
                 let lookupX = -1;
                 let lookupY = 16;
 
@@ -204,7 +204,7 @@ describe('Rover => ', function () {
                 expect(rover.getPosition()).toEqual(expectedPosition);
             });
 
-            it('should wrap from  edge North of the grid to the South one', function () {
+            it("should wrap from  edge North of the grid to the South one", function () {
                 let lookupX = 48;
                 let lookupY = 101;
 
@@ -215,7 +215,7 @@ describe('Rover => ', function () {
                 expect(rover.getPosition()).toEqual(expectedPosition);
             });
 
-            it('should wrap from  edge South of the grid to the North one', function () {
+            it("should wrap from  edge South of the grid to the North one", function () {
                 let lookupX = 48;
                 let lookupY = -1;
 
@@ -228,21 +228,21 @@ describe('Rover => ', function () {
 
         });
 
-        describe('receiveCommands', function () {
+        describe("receiveCommands", function () {
             let commands;
 
             beforeEach(function () {
-                commands = 'FLFRFFRFFLFRFLBRFLBR';
-                rover.setDirection('N');
+                commands = "FLFRFFRFFLFRFLBRFLBR";
+                rover.setDirection("N");
                 rover.setX(1);
                 rover.setY(1);
             });
 
-            it('should perform the given sequence of commands until the target position without obstacles', function () {
+            it("should perform the given sequence of commands until the target position without obstacles", function () {
 
 
                 let expectedPosition = [4, 3];
-                let expectedDirection = 'E';
+                let expectedDirection = "E";
 
                 let result = rover.receiveCommands(commands);
 
@@ -251,18 +251,18 @@ describe('Rover => ', function () {
 
             });
 
-            it('should stop to the position before obstacle and report', function () {
+            it("should stop to the position before obstacle and report", function () {
                 rover.getGrid().addObstacle(1, 4);
 
                 let expectedPosition = [0, 4];
-                let expectedDirection = 'E';
+                let expectedDirection = "E";
 
                 let report = {
                     success: false,
-                    message: 'Obstacle found at [1, 4]',
+                    message: "Obstacle found at [1, 4]",
                     currentPosition: expectedPosition,
                     currentDirection: expectedDirection
-                }
+                };
 
                 let result = rover.receiveCommands(commands);
 
