@@ -22,7 +22,7 @@ export class Rover {
         this.grid = grid;
     }
 
-    /**console.log('lookupx > maxGrid', lookupX, this.grid.getMaxX());
+    /**
      * Return the current position [x, y] of the rover
      */
     getPosition() {
