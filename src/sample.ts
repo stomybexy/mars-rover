@@ -25,5 +25,6 @@ prompt.get(['maxX', 'maxY', 'obstacles', 'x', 'y', 'direction', 'commands'], (er
 
 
 function onError(err) {
-
+    console.log(err);
+    return 1;
 }
