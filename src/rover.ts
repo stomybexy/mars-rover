@@ -191,7 +191,6 @@ export class Rover {
                 currentDirection: this.direction
             };
         }
-
     }
 
     /**
@@ -233,6 +232,5 @@ export class Rover {
             }
         }
         return finalResult;
-
     }
 }

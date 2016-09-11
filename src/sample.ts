@@ -1,6 +1,5 @@
 
 import * as prompt from "prompt";
-
 import { Grid } from "./grid";
 import { Rover } from "./rover";
 
@@ -41,9 +40,7 @@ let schema = {
         }
     }
 };
-
 prompt.start();
-
 prompt.get(schema, (err, res) => {
     if (err) {
         return onError(err);
@@ -53,14 +50,11 @@ prompt.get(schema, (err, res) => {
         let point = coord.split(":").map((xOrY) => Number(xOrY.trim()));
         obstacles[point[0]] = point[1];
     });
-
     let grid = new Grid(+res.maxX, +res.maxY, obstacles);
     let rover = new Rover(+res.x, +res.y, res.direction, grid);
     let result = rover.receiveCommands(res.commands);
-
     console.log(result);
 });
-
 
 function onError(err) {
     console.log(err);
