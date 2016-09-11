@@ -8,7 +8,6 @@ export class Grid {
         this.maxX = maxX;
         this.maxY = maxY;
         this.obstacles = obstacles;
-
     }
 
     isObstacle(coordinates: [number]): boolean {

@@ -1,5 +1,4 @@
 
-
 import { Grid } from "./grid";
 
 export class Rover {
@@ -9,16 +8,12 @@ export class Rover {
     private grid: Grid;
 
     constructor(x: number = 0, y: number = 0, direction: string = "N", grid: Grid = new Grid()) {
-
         this.setX(x);
         this.setY(y);
-
         this.x = this.x || 0;
         this.y = this.y || 0;
-
         this.setDirection(direction);
         this.direction = this.direction || "N";
-
         this.grid = grid;
     }
 
@@ -30,7 +25,6 @@ export class Rover {
     }
 
     setX(x: number) {
-
         if (x >= 0) {
             this.x = x;
         }
@@ -88,7 +82,6 @@ export class Rover {
                 lookupX--;
                 break;
         }
-
         return this._adjustAndValidateMove(lookupX, lookupY);
     }
 
@@ -98,7 +91,6 @@ export class Rover {
     moveBackward() {
         let lookupX = this.x;
         let lookupY = this.y;
-
         switch (this.direction) {
             case "N":
                 lookupY--;
@@ -173,25 +165,16 @@ export class Rover {
      */
     _adjustAndValidateMove(lookupX: number, lookupY: number) {
         if (lookupX > this.grid.getMaxX()) {
-
             lookupX = 0;
-
         } else if (lookupX < 0) {
-
             lookupX = this.grid.getMaxX();
         }
-
         if (lookupY > this.grid.getMaxY()) {
-
             lookupY = 0;
-
         } else if (lookupY < 0) {
-
             lookupY = this.grid.getMaxY();
         }
-
         if (this.grid.isObstacle([lookupX, lookupY])) {
-
             return {
                 success: false,
                 message: `Obstacle found at [${lookupX}, ${lookupY}]`,
@@ -224,7 +207,6 @@ export class Rover {
         };
         for (let i = 0; i < commands.length; i++) {
             let command = commands[i];
-
             switch (command.toUpperCase()) {
                 case "F":
                     finalResult = this.moveForward();
