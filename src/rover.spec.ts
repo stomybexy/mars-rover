@@ -28,7 +28,7 @@ describe("Rover => ", function () {
         beforeEach(function () {
             let obstacles = {};
 
-            rover = new Rover(5, 8, "N", new Grid(100, 100, obstacles));
+            rover = new Rover(5, 8, "N", new Grid(100, 150, obstacles));
         });
 
         describe("moveForward", function () {
@@ -206,7 +206,7 @@ describe("Rover => ", function () {
 
             it("should wrap from  edge North of the grid to the South one", function () {
                 let lookupX = 48;
-                let lookupY = 101;
+                let lookupY = 151;
 
                 let expectedPosition = [48, 0];
 
@@ -219,7 +219,7 @@ describe("Rover => ", function () {
                 let lookupX = 48;
                 let lookupY = -1;
 
-                let expectedPosition = [48, 100];
+                let expectedPosition = [48, 150];
 
                 let result = rover._adjustAndValidateMove(lookupX, lookupY);
 

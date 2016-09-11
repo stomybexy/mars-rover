@@ -16,11 +16,11 @@ export class Grid {
     }
 
     getMaxX() {
-        return this.maxY;
+        return this.maxX;
     }
 
     getMaxY() {
-        return this.maxX;
+        return this.maxY;
     }
 
     addObstacle(x, y) {
