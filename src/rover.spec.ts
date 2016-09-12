@@ -1,6 +1,6 @@
 
 import { Rover } from "./rover";
-import { Grid } from "./grid";
+import { Grid } from "./rover";
 
 describe("Rover => ", function () {
 

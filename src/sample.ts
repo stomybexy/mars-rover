@@ -1,6 +1,6 @@
 
 import * as prompt from "prompt";
-import { Grid } from "./grid";
+import { Grid } from "./rover";
 import { Rover } from "./rover";
 
 let schema = {
